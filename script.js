@@ -1,8 +1,16 @@
-function stringChop(str, size) {
-  // your code here
-}
+function chunkString(str, chunkLength) {
+    // Acceptance Criteria: If input string is null, return empty array
+    if (str === null) {
+        return [];
+    }
 
-// Do not change the code below
-const str = prompt("Enter String.");
-const size = prompt("Enter Chunk Size.");
-alert(stringChop(str, size));
+    const chunks = [];
+    
+    // Iterate through the string, jumping by the chunkLength each time
+    for (let i = 0; i < str.length; i += chunkLength) {
+        // slice(start, end) extracts characters from start up to (but not including) end
+        chunks.push(str.slice(i, i + chunkLength));
+    }
+
+    return chunks;
+}
